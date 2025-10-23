@@ -1,0 +1,116 @@
+/* author_style.css - Menu နှင့် ညာဘက် Content Area အတွက် စတိုင်များ */
+
+/* 1. Flex Container (ဘေးချင်းကပ်စေရန် အဓိက Rule) */
+.author-content-wrapper {
+    display: flex; /* Menu နှင့် Content ကို ဘေးချင်းကပ်စေသည် */
+    min-height: 600px;
+    background-color: #fcfcfc;
+    border: 2px solid burlywood; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+}
+
+/* 2. ဘယ်ဘက် Menu Bar Styles */
+.author-side-nav {
+    width: 250px;
+    flex-shrink: 0; /* Menu size ကို မချုံ့စေရန် */
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    border-right: 2px solid cornflowerblue;
+}
+
+/* 3. Menu Item List Formatting */
+.author-side-nav ul {
+    list-style-type:none;
+    padding: 10;
+    margin: 10;
+}
+
+/* 4. Menu Item Link Styles */
+.author-side-nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: blue;
+    font-size: 16px;
+    border-left: 5px solid transparent; 
+
+}
+
+.author-side-nav ul li a:hover {
+    background-color: cornflowerblue;
+}
+
+/* 5. ညာဘက် Content Area Styles */
+.author-content-area {
+    flex-grow: 1; /* ကျန်နေရာအကုန်ယူရန် */
+    padding: 10px;
+}
+
+/* 6. Content Switching Logic */
+
+/* Content Blocks အားလုံးကို ဖျောက်ထားပါ */
+.author-detail-content {
+    display: none;
+    padding: 10px;
+    line-height: 1.6;
+}
+
+/* default-visible (စစချင်းမြင်ရမည့် Content) ကို ပြသပါ */
+.default-visible {
+    display: block; 
+}
+
+/* Link ID ကို နှိပ်လျှင် သက်ဆိုင်ရာ Content ကို ပြသပါ */
+.author-detail-content:target {
+    display: block; 
+}
+
+/* Link နှိပ်လိုက်ရင် default-visible Content ကို ပြန်ဖျောက်ပါ */
+.author-content-area:has(#aungcheimt:target) .default-visible,
+.author-content-area:has(#nunuyi:target) .default-visible,
+.author-content-area:has(#punyakhin:target) .default-visible,
+.author-content-area:has(#maenyo:target) .default-visible {
+    display: none;
+}
+
+/* 7. Menu Active State Logic (အဓိက အမှားပြင်ဆင်ချက်) */
+
+/* Link တစ်ခုခုကို နှိပ်လိုက်ရင် default active ဖြစ်တဲ့ .active class ကို ဖျက်ရန် */
+.author-content-wrapper:has(#aungcheimt:target) .author-side-nav ul li a.active,
+.author-content-wrapper:has(#nunuyi:target) .author-side-nav ul li a.active,
+.author-content-wrapper:has(#punyakhin:target) .author-side-nav ul li a.active,
+.author-content-wrapper:has(#maenyo:target) .author-side-nav ul li a.active {
+    background-color: transparent !important; 
+    font-weight: normal !important;
+    color:#0056b3 !important;
+    border-left-color: transparent !important;
+}
+
+/* Link ID ကို နှိပ်လိုက်တဲ့အခါ (target state) နဲ့ စစချင်း active ဖြစ်တဲ့ class ကို စတိုင်လ်ပေးခြင်း */
+.author-side-nav ul li a:target,
+.author-side-nav ul li a.active { 
+    background-color: #d1e8ff; 
+    font-weight: bold;         
+    color: #0056b3;            
+    border-left-color: #0056b3;
+}
+
+/* 8. PDF Viewer Styles */
+.pdf-viewer {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.pdf-viewer h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+footer{ background-color: cornflowerblue;
+         text-align: center;
+        }

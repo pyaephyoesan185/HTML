@@ -1,0 +1,47 @@
+/* နောက်ခံအရောင် နဲ့ Font */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+  background: #2563eb;
+  padding: 20px 24px;
+}
+
+/* Navigation Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20%;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Active Page (လက်ရှိရှိနေတဲ့ Page) */
+nav a.active {
+  text-decoration: underline;
+}
+
+/* Page Container */
+.container {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #1e3a8a;
+}
+
+/*word*/
+span {color: rgb(0, 17, 255);
+   text-align:justify}
